@@ -4,7 +4,7 @@
 #
 Name     : argcomplete
 Version  : 1.5.1
-Release  : 18
+Release  : 19
 URL      : https://pypi.python.org/packages/4f/3e/83a0462db52be54427b9d3dca6cab3e6d9d4014f33781bb494e2d6a3a8ef/argcomplete-1.5.1.tar.gz
 Source0  : https://pypi.python.org/packages/4f/3e/83a0462db52be54427b9d3dca6cab3e6d9d4014f33781bb494e2d6a3a8ef/argcomplete-1.5.1.tar.gz
 Summary  : Bash tab completion for argparse
