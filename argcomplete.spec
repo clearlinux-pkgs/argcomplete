@@ -6,7 +6,7 @@
 #
 Name     : argcomplete
 Version  : 1.5.1
-Release  : 20
+Release  : 21
 URL      : http://pypi.debian.net/argcomplete/argcomplete-1.5.1.tar.gz
 Source0  : http://pypi.debian.net/argcomplete/argcomplete-1.5.1.tar.gz
 Source99 : http://pypi.debian.net/argcomplete/argcomplete-1.5.1.tar.gz.asc
