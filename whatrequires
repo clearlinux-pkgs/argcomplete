@@ -61,6 +61,7 @@ audit
 autofs
 awscli
 babl
+backports.functools_lru_cache
 backports.ssl_match_hostname
 backports.weakref
 bash_kernel
@@ -91,6 +92,7 @@ cogl
 colorama
 colord
 colord-gtk
+comedilib
 compat-libwebp-soname6
 compat-llvm-soname4
 compat-opencv-soname32
@@ -126,6 +128,7 @@ edk2
 entrypoints
 enum34
 eog
+evolution
 execnet
 exo
 extras
@@ -145,6 +148,7 @@ garcon
 gcr
 gcs-oauth2-boto-plugin
 gdk-pixbuf
+gdm
 geany
 gensim
 geoclue
@@ -155,23 +159,29 @@ git
 glances
 glib
 gmime
+gnome-applets
 gnome-autoar
 gnome-backgrounds
 gnome-bluetooth
+gnome-calculator
 gnome-calendar
 gnome-desktop
 gnome-font-viewer
 gnome-online-accounts
 gnome-panel
 gnome-session
+gnome-settings-daemon
 gnome-shell
 gnome-terminal
 gnome-tweak-tool
 gnutls
 gobject-introspection
+goocanvas
 google-apitools
+gpgme
 greenlet
 grilo
+grilo-plugins
 gst-plugins-bad
 gst-plugins-base
 gst-plugins-good
@@ -196,6 +206,7 @@ httpretty
 hypothesis
 ibus
 icalendar
+icdiff
 idna
 imagesize
 iotop
@@ -211,6 +222,7 @@ isa-l
 iso8601
 isort
 ister
+itstool
 javapackages-tools
 jedi
 jedi-vim
@@ -297,6 +309,7 @@ matplotlib
 mccabe
 mesa
 meson
+metacity
 mido
 mistune
 mod_wsgi
@@ -304,6 +317,7 @@ moka-icon-theme
 mozjs
 mozjs38
 mutt
+mutter
 nasm
 nautilus
 nbconvert
@@ -348,6 +362,7 @@ pickleshare
 pip
 pluggy
 polkit
+portaudio
 posix_ipc
 pretend
 prettytable
@@ -472,6 +487,7 @@ urllib3
 util-linux
 uwsgi
 vcversioner
+vinagre
 virt-viewer
 virtualenv
 vte
@@ -497,4 +513,5 @@ xproto
 xtrans
 yasm
 yum-metadata-parser
+zenity
 zstd
