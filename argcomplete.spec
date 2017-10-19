@@ -4,7 +4,7 @@
 #
 Name     : argcomplete
 Version  : 1.9.2
-Release  : 26
+Release  : 27
 URL      : http://pypi.debian.net/argcomplete/argcomplete-1.9.2.tar.gz
 Source0  : http://pypi.debian.net/argcomplete/argcomplete-1.9.2.tar.gz
 Summary  : Bash tab completion for argparse
