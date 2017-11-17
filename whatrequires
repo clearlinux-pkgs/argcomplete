@@ -31,6 +31,7 @@ SDL2_image
 SQLAlchemy
 SocksiPy-branch
 Sphinx
+Tempita
 Theano
 WALinuxAgent
 WSGIProxy2
@@ -79,12 +80,14 @@ botocore
 bz2file
 cairo
 ceph
+ceph-deploy
 certifi
 cffi
 chardet
 cheese
 chrome-gnome-shell
 click
+clr-boot-manager
 clutter
 clutter-gst
 clutter-gtk
@@ -117,6 +120,7 @@ deap
 decorator
 diffoscope
 dnf
+dnf-plugins-core
 dnspython
 docker
 docker-py
@@ -258,7 +262,9 @@ libarchive-c
 libcanberra
 libcroco
 libcryptui
+libdnf
 libgdata
+libglade
 libgnome-keyring
 libgsystem
 libgtop
@@ -299,6 +305,7 @@ linux-kvm
 linux-lts
 linux-tools
 llvm
+llvmlite
 logilab-common
 logutils
 lxml
@@ -336,6 +343,7 @@ nose
 nose-parameterized
 notebook
 numactl
+numba
 numpy
 oauth2client
 olefile
@@ -390,6 +398,7 @@ pynacl
 pyparsing
 pypy
 pyquery
+pyserial
 pytest
 pytest-cov
 pytest-runner
@@ -427,6 +436,7 @@ retry_decorator
 rsa
 s3transfer
 samba
+satyr
 scala
 scikit-build
 scikit-image
@@ -435,6 +445,7 @@ scipy
 scons
 scripttest
 scrnsaverproto
+seaborn
 secretstorage
 setproctitle
 setuptools
