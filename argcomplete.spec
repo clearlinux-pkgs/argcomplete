@@ -6,7 +6,7 @@
 #
 Name     : argcomplete
 Version  : 1.9.4
-Release  : 34
+Release  : 35
 URL      : https://pypi.python.org/packages/3c/21/9741e5e5e63245a8cdafb32ffc738bff6e7ef6253b65953e77933e56ce88/argcomplete-1.9.4.tar.gz
 Source0  : https://pypi.python.org/packages/3c/21/9741e5e5e63245a8cdafb32ffc738bff6e7ef6253b65953e77933e56ce88/argcomplete-1.9.4.tar.gz
 Source99 : https://pypi.python.org/packages/3c/21/9741e5e5e63245a8cdafb32ffc738bff6e7ef6253b65953e77933e56ce88/argcomplete-1.9.4.tar.gz.asc
@@ -15,6 +15,7 @@ Group    : Development/Tools
 License  : Apache-2.0
 Requires: argcomplete-bin
 Requires: argcomplete-python3
+Requires: argcomplete-license
 Requires: argcomplete-python
 Requires: coverage
 Requires: flake8
@@ -23,7 +24,6 @@ Requires: wheel
 BuildRequires : pbr
 BuildRequires : pip
 BuildRequires : pytest
-BuildRequires : python-dev
 BuildRequires : python3-dev
 BuildRequires : setuptools
 
@@ -36,9 +36,18 @@ BuildRequires : setuptools
 %package bin
 Summary: bin components for the argcomplete package.
 Group: Binaries
+Requires: argcomplete-license
 
 %description bin
 bin components for the argcomplete package.
+
+
+%package license
+Summary: license components for the argcomplete package.
+Group: Default
+
+%description license
+license components for the argcomplete package.
 
 
 %package python
@@ -67,7 +76,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1523307349
+export SOURCE_DATE_EPOCH=1529090689
 python3 setup.py build -b py3
 
 %check
@@ -77,6 +86,8 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 py.test --verbose test/test.py || :
 %install
 rm -rf %{buildroot}
+mkdir -p %{buildroot}/usr/share/doc/argcomplete
+cp LICENSE.rst %{buildroot}/usr/share/doc/argcomplete/LICENSE.rst
 python3 -tt setup.py build -b py3 install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
@@ -91,6 +102,10 @@ echo ----[ mark ]----
 /usr/bin/python-argcomplete-check-easy-install-script
 /usr/bin/python-argcomplete-tcsh
 /usr/bin/register-python-argcomplete
+
+%files license
+%defattr(-,root,root,-)
+/usr/share/doc/argcomplete/LICENSE.rst
 
 %files python
 %defattr(-,root,root,-)
