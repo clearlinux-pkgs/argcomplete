@@ -6,10 +6,10 @@
 #
 Name     : argcomplete
 Version  : 1.9.4
-Release  : 44
-URL      : https://pypi.python.org/packages/3c/21/9741e5e5e63245a8cdafb32ffc738bff6e7ef6253b65953e77933e56ce88/argcomplete-1.9.4.tar.gz
-Source0  : https://pypi.python.org/packages/3c/21/9741e5e5e63245a8cdafb32ffc738bff6e7ef6253b65953e77933e56ce88/argcomplete-1.9.4.tar.gz
-Source99 : https://pypi.python.org/packages/3c/21/9741e5e5e63245a8cdafb32ffc738bff6e7ef6253b65953e77933e56ce88/argcomplete-1.9.4.tar.gz.asc
+Release  : 45
+URL      : https://files.pythonhosted.org/packages/3c/21/9741e5e5e63245a8cdafb32ffc738bff6e7ef6253b65953e77933e56ce88/argcomplete-1.9.4.tar.gz
+Source0  : https://files.pythonhosted.org/packages/3c/21/9741e5e5e63245a8cdafb32ffc738bff6e7ef6253b65953e77933e56ce88/argcomplete-1.9.4.tar.gz
+Source99 : https://files.pythonhosted.org/packages/3c/21/9741e5e5e63245a8cdafb32ffc738bff6e7ef6253b65953e77933e56ce88/argcomplete-1.9.4.tar.gz.asc
 Summary  : Bash tab completion for argparse
 Group    : Development/Tools
 License  : Apache-2.0
@@ -21,11 +21,8 @@ Requires: coverage
 Requires: flake8
 Requires: pexpect
 Requires: wheel
-BuildRequires : pbr
-BuildRequires : pip
+BuildRequires : buildreq-distutils3
 BuildRequires : pytest
-BuildRequires : python3-dev
-BuildRequires : setuptools
 
 %description
 ==============================================
@@ -76,7 +73,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1529090689
+export SOURCE_DATE_EPOCH=1532978722
 python3 setup.py build -b py3
 
 %check
