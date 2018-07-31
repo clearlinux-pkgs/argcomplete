@@ -6,7 +6,7 @@
 #
 Name     : argcomplete
 Version  : 1.9.4
-Release  : 47
+Release  : 48
 URL      : https://files.pythonhosted.org/packages/3c/21/9741e5e5e63245a8cdafb32ffc738bff6e7ef6253b65953e77933e56ce88/argcomplete-1.9.4.tar.gz
 Source0  : https://files.pythonhosted.org/packages/3c/21/9741e5e5e63245a8cdafb32ffc738bff6e7ef6253b65953e77933e56ce88/argcomplete-1.9.4.tar.gz
 Source99 : https://files.pythonhosted.org/packages/3c/21/9741e5e5e63245a8cdafb32ffc738bff6e7ef6253b65953e77933e56ce88/argcomplete-1.9.4.tar.gz.asc
@@ -22,6 +22,7 @@ Requires: flake8
 Requires: pexpect
 Requires: wheel
 BuildRequires : buildreq-distutils3
+BuildRequires : pexpect
 BuildRequires : pytest
 
 %description
@@ -73,7 +74,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1532979645
+export SOURCE_DATE_EPOCH=1533001465
 python3 setup.py build -b py3
 
 %check
