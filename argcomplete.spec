@@ -5,36 +5,31 @@
 # Source0 file verified with key 0x8AFAFCD242818A52 (kislyuk@gmail.com)
 #
 Name     : argcomplete
-Version  : 1.9.4
-Release  : 49
-URL      : https://files.pythonhosted.org/packages/3c/21/9741e5e5e63245a8cdafb32ffc738bff6e7ef6253b65953e77933e56ce88/argcomplete-1.9.4.tar.gz
-Source0  : https://files.pythonhosted.org/packages/3c/21/9741e5e5e63245a8cdafb32ffc738bff6e7ef6253b65953e77933e56ce88/argcomplete-1.9.4.tar.gz
-Source99 : https://files.pythonhosted.org/packages/3c/21/9741e5e5e63245a8cdafb32ffc738bff6e7ef6253b65953e77933e56ce88/argcomplete-1.9.4.tar.gz.asc
+Version  : 1.9.5
+Release  : 50
+URL      : https://files.pythonhosted.org/packages/63/6b/d0b2a9938eadbb0d49087f68b518d25fc36f45e98944a0ee4703dab80bfc/argcomplete-1.9.5.tar.gz
+Source0  : https://files.pythonhosted.org/packages/63/6b/d0b2a9938eadbb0d49087f68b518d25fc36f45e98944a0ee4703dab80bfc/argcomplete-1.9.5.tar.gz
+Source99 : https://files.pythonhosted.org/packages/63/6b/d0b2a9938eadbb0d49087f68b518d25fc36f45e98944a0ee4703dab80bfc/argcomplete-1.9.5.tar.gz.asc
 Summary  : Bash tab completion for argparse
 Group    : Development/Tools
 License  : Apache-2.0
-Requires: argcomplete-bin
-Requires: argcomplete-python3
-Requires: argcomplete-license
-Requires: argcomplete-python
-Requires: coverage
-Requires: flake8
-Requires: pexpect
-Requires: wheel
+Requires: argcomplete-bin = %{version}-%{release}
+Requires: argcomplete-license = %{version}-%{release}
+Requires: argcomplete-python = %{version}-%{release}
+Requires: argcomplete-python3 = %{version}-%{release}
 BuildRequires : buildreq-distutils3
 BuildRequires : pexpect
 BuildRequires : pytest
 
 %description
+argcomplete - Bash tab completion for argparse
 ==============================================
-        *Tab complete all the things!*
-        
-        Argcomplete provides easy, extensible command line tab completion of arguments for your Python script.
+*Tab complete all the things!*
 
 %package bin
 Summary: bin components for the argcomplete package.
 Group: Binaries
-Requires: argcomplete-license
+Requires: argcomplete-license = %{version}-%{release}
 
 %description bin
 bin components for the argcomplete package.
@@ -51,7 +46,7 @@ license components for the argcomplete package.
 %package python
 Summary: python components for the argcomplete package.
 Group: Default
-Requires: argcomplete-python3
+Requires: argcomplete-python3 = %{version}-%{release}
 
 %description python
 python components for the argcomplete package.
@@ -67,15 +62,16 @@ python3 components for the argcomplete package.
 
 
 %prep
-%setup -q -n argcomplete-1.9.4
+%setup -q -n argcomplete-1.9.5
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1533001465
-python3 setup.py build -b py3
+export SOURCE_DATE_EPOCH=1554226235
+export MAKEFLAGS=%{?_smp_mflags}
+python3 setup.py build
 
 %check
 export http_proxy=http://127.0.0.1:9/
@@ -83,10 +79,11 @@ export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 py.test --verbose test/test.py || :
 %install
+export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
-mkdir -p %{buildroot}/usr/share/doc/argcomplete
-cp LICENSE.rst %{buildroot}/usr/share/doc/argcomplete/LICENSE.rst
-python3 -tt setup.py build -b py3 install --root=%{buildroot}
+mkdir -p %{buildroot}/usr/share/package-licenses/argcomplete
+cp LICENSE.rst %{buildroot}/usr/share/package-licenses/argcomplete/LICENSE.rst
+python3 -tt setup.py build  install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
 echo ----[ mark ]----
@@ -102,8 +99,8 @@ echo ----[ mark ]----
 /usr/bin/register-python-argcomplete
 
 %files license
-%defattr(-,root,root,-)
-/usr/share/doc/argcomplete/LICENSE.rst
+%defattr(0644,root,root,0755)
+/usr/share/package-licenses/argcomplete/LICENSE.rst
 
 %files python
 %defattr(-,root,root,-)
