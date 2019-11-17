@@ -1,5 +1,5 @@
 PKG_NAME := argcomplete
-URL = https://files.pythonhosted.org/packages/9c/c5/4009a381ba46f8424832b6fa9a6d8c79b2089a0170beb434280d293a5b5c/argcomplete-1.10.0.tar.gz
+URL = https://files.pythonhosted.org/packages/58/88/5a8da671e087ef513a63519344b35d80c6979591eee24e06a5acd1cd11b9/argcomplete-1.10.2.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
