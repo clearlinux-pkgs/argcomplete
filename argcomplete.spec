@@ -5,11 +5,11 @@
 # Source0 file verified with key 0x8AFAFCD242818A52 (kislyuk@gmail.com)
 #
 Name     : argcomplete
-Version  : 1.11.0
-Release  : 58
-URL      : https://files.pythonhosted.org/packages/84/44/ad7f3fc9483b776dcee11d0a1dcadb6e55c456e06ae611073b82bc8d63d2/argcomplete-1.11.0.tar.gz
-Source0  : https://files.pythonhosted.org/packages/84/44/ad7f3fc9483b776dcee11d0a1dcadb6e55c456e06ae611073b82bc8d63d2/argcomplete-1.11.0.tar.gz
-Source1  : https://files.pythonhosted.org/packages/84/44/ad7f3fc9483b776dcee11d0a1dcadb6e55c456e06ae611073b82bc8d63d2/argcomplete-1.11.0.tar.gz.asc
+Version  : 1.11.1
+Release  : 59
+URL      : https://files.pythonhosted.org/packages/43/61/345856864a72ccc004bea5f74183c58bfd6675f9eab931ff9ce21a8fe06b/argcomplete-1.11.1.tar.gz
+Source0  : https://files.pythonhosted.org/packages/43/61/345856864a72ccc004bea5f74183c58bfd6675f9eab931ff9ce21a8fe06b/argcomplete-1.11.1.tar.gz
+Source1  : https://files.pythonhosted.org/packages/43/61/345856864a72ccc004bea5f74183c58bfd6675f9eab931ff9ce21a8fe06b/argcomplete-1.11.1.tar.gz.asc
 Summary  : Bash tab completion for argparse
 Group    : Development/Tools
 License  : Apache-2.0
@@ -62,15 +62,15 @@ python3 components for the argcomplete package.
 
 
 %prep
-%setup -q -n argcomplete-1.11.0
-cd %{_builddir}/argcomplete-1.11.0
+%setup -q -n argcomplete-1.11.1
+cd %{_builddir}/argcomplete-1.11.1
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1578151724
+export SOURCE_DATE_EPOCH=1579029244
 # -Werror is for werrorists
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
@@ -92,7 +92,7 @@ py.test --verbose test/test.py || :
 export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/argcomplete
-cp %{_builddir}/argcomplete-1.11.0/LICENSE.rst %{buildroot}/usr/share/package-licenses/argcomplete/598f87f072f66e2269dd6919292b2934dbb20492
+cp %{_builddir}/argcomplete-1.11.1/LICENSE.rst %{buildroot}/usr/share/package-licenses/argcomplete/598f87f072f66e2269dd6919292b2934dbb20492
 python3 -tt setup.py build  install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
